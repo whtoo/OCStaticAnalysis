@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		585AA09425AE808600D5F5A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA09325AE808600D5F5A5 /* main.swift */; };
+		585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B225AE902D00D5F5A5 /* JToken.swift */; };
+		585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B525AE904400D5F5A5 /* JTokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		585AA09025AE808600D5F5A5 /* OCStaticAnalysis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OCStaticAnalysis; sourceTree = BUILT_PRODUCTS_DIR; };
 		585AA09325AE808600D5F5A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		585AA0B225AE902D00D5F5A5 /* JToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JToken.swift; sourceTree = "<group>"; };
+		585AA0B525AE904400D5F5A5 /* JTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTokenizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				585AA09325AE808600D5F5A5 /* main.swift */,
+				585AA0B225AE902D00D5F5A5 /* JToken.swift */,
+				585AA0B525AE904400D5F5A5 /* JTokenizer.swift */,
 			);
 			path = OCStaticAnalysis;
 			sourceTree = "<group>";
@@ -119,6 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */,
+				585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */,
 				585AA09425AE808600D5F5A5 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

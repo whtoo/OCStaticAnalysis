@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  JToken.swift
 //  OCStaticAnalysis
 //
 //  Created by blitz on 2021/1/13.
@@ -7,5 +7,7 @@
 
 import Foundation
 
-print("0.168".isFloat())
-
+struct JToken {
+    var type = ""
+    var value = ""
+}
