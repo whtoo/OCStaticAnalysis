@@ -10,6 +10,9 @@
 		585AA09425AE808600D5F5A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA09325AE808600D5F5A5 /* main.swift */; };
 		585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B225AE902D00D5F5A5 /* JToken.swift */; };
 		585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B525AE904400D5F5A5 /* JTokenizer.swift */; };
+		585AA0BB25AE977500D5F5A5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */; };
+		58ED5AA425AFD391000A5F9F /* JNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA325AFD391000A5F9F /* JNode.swift */; };
+		58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA725AFD506000A5F9F /* JParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,9 @@
 		585AA09325AE808600D5F5A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		585AA0B225AE902D00D5F5A5 /* JToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JToken.swift; sourceTree = "<group>"; };
 		585AA0B525AE904400D5F5A5 /* JTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTokenizer.swift; sourceTree = "<group>"; };
+		585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		58ED5AA325AFD391000A5F9F /* JNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNode.swift; sourceTree = "<group>"; };
+		58ED5AA725AFD506000A5F9F /* JParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,9 @@
 				585AA09325AE808600D5F5A5 /* main.swift */,
 				585AA0B225AE902D00D5F5A5 /* JToken.swift */,
 				585AA0B525AE904400D5F5A5 /* JTokenizer.swift */,
+				585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */,
+				58ED5AA325AFD391000A5F9F /* JNode.swift */,
+				58ED5AA725AFD506000A5F9F /* JParser.swift */,
 			);
 			path = OCStaticAnalysis;
 			sourceTree = "<group>";
@@ -125,9 +134,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585AA0BB25AE977500D5F5A5 /* StringExtensions.swift in Sources */,
+				58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */,
 				585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */,
 				585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */,
 				585AA09425AE808600D5F5A5 /* main.swift in Sources */,
+				58ED5AA425AFD391000A5F9F /* JNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

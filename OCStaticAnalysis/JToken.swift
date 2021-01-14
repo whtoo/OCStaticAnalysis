@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct JToken {
+public struct JToken {
     var type = ""
     var value = ""
 }
