@@ -7,11 +7,13 @@
 
 import Foundation
 
-public enum JNumberType {
-    case int,float
+public enum JNumberType: String {
+    case int
+    case float
 }
 
-public enum JNodeType {
+public enum JNodeType: String {
+    case Root
     case None
     case NumberLiteral
     case CallExpression

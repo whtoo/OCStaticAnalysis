@@ -109,6 +109,8 @@ public class JParser {
             dataStr = "expression is \(node.type) (\(node.name))"
         case .None:
             dataStr = ""
+        case .Root:
+            dataStr = "root node"
         }
         print("\(preSpace) \(nodeTypeStr) \(dataStr)")
         
