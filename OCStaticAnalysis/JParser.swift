@@ -80,4 +80,42 @@ public class JParser {
         advance()
         return jNode
     }
+    
+    // -------- 打印AST， 方便调试 ---------
+    func astPrintable(_ tree: [JNode]) {
+        for aNode in tree {
+            recDesNode(aNode, level: 0)
+        }
+    }
+    
+    private func recDesNode(_ node: JNode, level: Int) {
+        let nodeTypeStr = node.type
+        var preSpace = ""
+        for _ in 0...level {
+            preSpace += "  "
+        }
+        
+        var dataStr = ""
+        switch node.type {
+        case .NumberLiteral:
+            var numberStr = ""
+            if node.numberType == .int {
+                numberStr = "\(node.intValue)"
+            } else if node.numberType == .float {
+                numberStr = "\(node.floatValue)"
+            }
+            dataStr = "number type is \(node.numberType) number is \(numberStr)"
+        case .CallExpression:
+            dataStr = "expression is \(node.type) (\(node.name))"
+        case .None:
+            dataStr = ""
+        }
+        print("\(preSpace) \(nodeTypeStr) \(dataStr)")
+        
+        if node.params.count > 0 {
+            for aNode in node.params {
+                recDesNode(aNode, level: level+1)
+            }
+        }
+    }
 }

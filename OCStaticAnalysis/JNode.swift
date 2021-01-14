@@ -43,3 +43,7 @@ public struct JNode: JNodeBase, JNumberLiteral {
     public var floatValue: Float = 0
     
 }
+
+protocol Printable {
+    var desc: String { get }
+}

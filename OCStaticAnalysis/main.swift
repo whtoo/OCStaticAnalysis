@@ -9,7 +9,7 @@ import Foundation
 
 let input = "(multiple (add 2 3) 4)"
 
-let tokens = JTokenizer.init(input).tokenizer()
-print("\(tokens)")
+let parser = JParser(input)
+let ast = parser.parser()
 
-
+parser.astPrintable(ast)
