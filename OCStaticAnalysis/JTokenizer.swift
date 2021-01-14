@@ -7,20 +7,64 @@
 
 import Foundation
 
-extension String {
-    func isInt() -> Bool {
-        let scan:Scanner = Scanner(string: self)
-        var val: Int = 0
-        return scan.scanInt(&val) && scan.isAtEnd
+public class JTokenizer {
+    private var _input: String
+    private var _index: String.Index
+    
+    init(_ input: String) {
+        _input = input.filterAnnotationBlock()
+        _index = _input.startIndex
     }
     
-    func isFloat() -> Bool {
-        let scan:Scanner = Scanner(string: self)
-        
-        if scan.scanFloat(representation: .decimal) != nil {
-            return scan.isAtEnd
-        }
-        
-        return  false
+    fileprivate func advanceIndex() {
+        _index = _input.index(after: _index)
     }
+    
+    fileprivate var currentChar: Character? {
+        get {
+            return _index < _input.endIndex ? _input[_index] : nil
+        }
+    }
+    
+    public func tokenizer() -> [JToken] {
+        var tokens = [JToken]()
+        while let aChar = currentChar {
+            let s = aChar.description
+            let symbols = ["(",")"," "]
+            if symbols.contains(s) {
+                if s == " " {
+                    //Skip whitespace
+                    advanceIndex()
+                    continue
+                }
+                tokens.append(JToken(type: "paren", value: s))
+                advanceIndex()
+                continue
+            } else {
+                var word = ""
+                while let aChar = currentChar {
+                    let str = aChar.description
+                    if(symbols.contains(str)) {
+                        break
+                    }
+                    word.append(str)
+                    advanceIndex()
+                    continue
+                }
+                
+                if word.count > 0 {
+                    var tkType = "char"
+                    if word.isInt() {
+                       tkType = "int"
+                    }else if word.isFloat() {
+                        tkType = "float"
+                    }
+                    tokens.append(JToken(type: tkType, value: word))
+                }
+            }// End if
+        }//End while
+        return tokens
+    }
+    
+    
 }
