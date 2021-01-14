@@ -7,5 +7,9 @@
 
 import Foundation
 
-print("0.168".isFloat())
+let input = "(multiple (add 2 3) 4)"
+
+let tokens = JTokenizer.init(input).tokenizer()
+print("\(tokens)")
+
 
