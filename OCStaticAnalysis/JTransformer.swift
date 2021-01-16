@@ -9,11 +9,17 @@ import Foundation
 
 public class JTransformer {
     public var ast:[JNode]
+    private var parentStack:[JNode] = [JNode]()
+    private var currentParent: JNode {
+        return parentStack.last!
+    }
     /// TODO :  父节点需要使用栈管理
     public init(_ input: String) {
         ast = [JNode]()
         var parentStack = [JNode]()
-        parentStack.append(JNode())
+        let rootNode = JNode()
+        rootNode.type = .Root
+        parentStack.append(rootNode)
         var currentParent = parentStack.last!
         let numberLiteralClosure:VisitorClosure = { (node,parent) in
             if currentParent.type == .ExpressionStatement {
@@ -26,6 +32,7 @@ public class JTransformer {
         let callExpressionClosure:VisitorClosure = { (node,parent) in
             let exp = JNodeCallee()
             exp.type = .CallExpression
+            exp.name = node.name
             
             let callee = JNode()
             callee.type = .Identifier

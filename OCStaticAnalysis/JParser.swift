@@ -105,6 +105,7 @@ public class JParser {
                 numberStr = "\(node.floatValue)"
             }
             dataStr = "number type is \(node.numberType) number is \(numberStr)"
+            print("\(preSpace) \(dataStr)")
         case .CallExpression:
             dataStr = "expression is \(node.type) (\(node.name))"
             print("\(preSpace) \(nodeTypeStr) \(dataStr)")
@@ -118,8 +119,9 @@ public class JParser {
             dataStr = ""
         case .Root:
             dataStr = "Root node"
+            print("\(preSpace) \(dataStr)")
         case .Identifier:
-            dataStr = "identifier node"
+            dataStr = "identifier node \(node.name)"
         case .ExpressionStatement:
             dataStr = "expression-statement node"
             print("\(preSpace) \(nodeTypeStr) \(dataStr)")
