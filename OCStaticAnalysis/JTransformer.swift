@@ -13,6 +13,11 @@ public class JTransformer {
     private var currentParent: JNode {
         return parentStack.last!
     }
+    
+    public func popParent() -> Bool {
+        return parentStack.popLast() != nil
+    }
+    
     /// TODO :  父节点需要使用栈管理
     public init(_ input: String) {
         ast = [JNode]()
@@ -20,13 +25,12 @@ public class JTransformer {
         let rootNode = JNode()
         rootNode.type = .Root
         parentStack.append(rootNode)
-        var currentParent = parentStack.last!
         let numberLiteralClosure:VisitorClosure = { (node,parent) in
-            if currentParent.type == .ExpressionStatement {
-                currentParent.expressions[0].params.append(node)
+            if self.currentParent.type == .ExpressionStatement {
+                self.currentParent.expressions[0].params.append(node)
             }
-            if currentParent.type == .CallExpression{
-                currentParent.params.append(node)
+            if self.currentParent.type == .CallExpression{
+                self.currentParent.params.append(node)
             }
         }
         let callExpressionClosure:VisitorClosure = { (node,parent) in
@@ -46,18 +50,18 @@ public class JTransformer {
                 if parent.type == .Root {
                     self.ast.append(exps)
                 }
-                currentParent = exps
+                self.parentStack.append(exps)
             }
             else {
-                currentParent.expressions[0].params.append(exp)
-                currentParent = exp
+                self.currentParent.expressions[0].params.append(exp)
+                self.parentStack.append(exp)
             }
         }
         
-            let vDic = ["NumberLiteral": numberLiteralClosure, "CallExpression" : callExpressionClosure]
-    
-            JTraverser(input).traverser(visitor: vDic)
-            print("After transform AST:")
-            JParser.astPrintable(ast)
+        let vDic = ["NumberLiteral": numberLiteralClosure, "CallExpression" : callExpressionClosure]
+
+        JTraverser(input).traverser(visitor: vDic,transformer: self)
+        print("After transform AST:")
+        JParser.astPrintable(ast)
     }
 }
