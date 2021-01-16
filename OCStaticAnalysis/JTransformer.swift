@@ -53,7 +53,11 @@ public class JTransformer {
                 self.parentStack.append(exps)
             }
             else {
-                self.currentParent.expressions[0].params.append(exp)
+                if self.currentParent.type == .ExpressionStatement {
+                    self.currentParent.expressions[0].params.append(exp)
+                } else {
+                    self.currentParent.params.append(exp)
+                }
                 self.parentStack.append(exp)
             }
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-let input = "(multiple (add 2 3.1) 4)"
+let input = "(lessThanOne (multiple (add 2 3.1) 4))"
 
 //let parser = JParser(input)
 //let ast = parser.parser()
