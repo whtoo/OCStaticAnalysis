@@ -13,7 +13,7 @@ public enum JNumberType: String {
 }
 
 public enum JNodeType: String {
-    case Program
+    case Root
     case None
     case NumberLiteral
     case CallExpression
@@ -33,23 +33,9 @@ public protocol JNumberLiteral {
     var floatValue: Float { get }
 }
 
-public struct JNodeCallExpression: JNodeBase, JNumberLiteral {
-    public var type: JNodeType = .CallExpression
-    
-    public var name: String = ""
-    
-    public var params: [JNode] = [JNode]()
-    
-    public var numberType: JNumberType = JNumberType.int
-    
-    public var intValue: Int = 0
-    
-    public var floatValue: Float = 0
-    
-    public var callee: JNode?
-}
 
-public struct JNode: JNodeBase, JNumberLiteral {
+
+public class JNode: JNodeBase, JNumberLiteral {
     public var type: JNodeType = JNodeType.None
     
     public var name: String = ""
@@ -62,6 +48,12 @@ public struct JNode: JNodeBase, JNumberLiteral {
     
     public var floatValue: Float = 0
     
+    public var expressions: [JNode] = [JNode]()
+    
+}
+
+public class JNodeCallee: JNode {
+    public var callee: JNode?
 }
 
 protocol Printable {

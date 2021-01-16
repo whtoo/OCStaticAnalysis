@@ -42,7 +42,7 @@ public class JParser {
     // LL
     private func walk() -> JNode {
         var tk = _currrnetTk
-        var jNode = JNode()
+        let jNode = JNode()
         //检查是不是数字节点
         if tk.type == "int" || tk.type == "float" {
             advance()
@@ -109,7 +109,7 @@ public class JParser {
             dataStr = "expression is \(node.type) (\(node.name))"
         case .None:
             dataStr = ""
-        case .Program:
+        case .Root:
             dataStr = "program node"
         case .Identifier:
             dataStr = "identifier node"
