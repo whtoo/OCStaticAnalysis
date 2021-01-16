@@ -37,7 +37,7 @@ public class JTraverser {
     
     public func traverser(visitor:[String:VisitorClosure]) {
         var rootNode = JNode()
-        rootNode.type = .Root
+        rootNode.type = .Program
         traverseChildNode(visitor,childrens: _ast, parent: rootNode)
     }
 }

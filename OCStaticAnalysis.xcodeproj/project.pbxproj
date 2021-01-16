@@ -14,6 +14,7 @@
 		58ED5AA425AFD391000A5F9F /* JNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA325AFD391000A5F9F /* JNode.swift */; };
 		58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA725AFD506000A5F9F /* JParser.swift */; };
 		58ED5AAB25AFE769000A5F9F /* JTraverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AAA25AFE769000A5F9F /* JTraverser.swift */; };
+		58ED5AAE25AFECDB000A5F9F /* JTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AAD25AFECDB000A5F9F /* JTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		58ED5AA325AFD391000A5F9F /* JNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNode.swift; sourceTree = "<group>"; };
 		58ED5AA725AFD506000A5F9F /* JParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JParser.swift; sourceTree = "<group>"; };
 		58ED5AAA25AFE769000A5F9F /* JTraverser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTraverser.swift; sourceTree = "<group>"; };
+		58ED5AAD25AFECDB000A5F9F /* JTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */,
 				58ED5AA325AFD391000A5F9F /* JNode.swift */,
 				58ED5AA725AFD506000A5F9F /* JParser.swift */,
+				58ED5AAD25AFECDB000A5F9F /* JTransformer.swift */,
 				58ED5AAA25AFE769000A5F9F /* JTraverser.swift */,
 			);
 			path = OCStaticAnalysis;
@@ -139,6 +142,7 @@
 			files = (
 				585AA0BB25AE977500D5F5A5 /* StringExtensions.swift in Sources */,
 				58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */,
+				58ED5AAE25AFECDB000A5F9F /* JTransformer.swift in Sources */,
 				585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */,
 				58ED5AAB25AFE769000A5F9F /* JTraverser.swift in Sources */,
 				585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */,
