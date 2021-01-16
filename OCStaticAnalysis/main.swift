@@ -9,7 +9,10 @@ import Foundation
 
 let input = "(multiple (add 2 3.1) 4)"
 
-let parser = JParser(input)
-let ast = parser.parser()
+//let parser = JParser(input)
+//let ast = parser.parser()
 
-parser.astPrintable(ast)
+//parser.astPrintable(ast)
+
+let generator = CodeGeneratorFromJSToOC(input)
+

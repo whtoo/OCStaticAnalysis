@@ -23,10 +23,19 @@ public class JTraverser {
                 closure(node,parent)
             }
         }
-        // 看看是否有子节点需要遍历
-        if node.params.count > 0 {
-            traverseChildNode(visitor,childrens: node.params, parent: node)
-        }// exit
+        if node.type == .CallExpression {
+            // 看看是否有子节点需要遍历
+            if node.params.count > 0 {
+                traverseChildNode(visitor,childrens: node.params, parent: node)
+            }// exit
+        } else if node.type == .ExpressionStatement {
+            // 看看是否有子节点需要遍历
+            if node.expressions.count > 0 {
+                traverseChildNode(visitor,childrens: node.expressions, parent: node)
+            }// exit
+        }
+       
+       
     }
     
     fileprivate func traverseChildNode(_ visitor:[String:VisitorClosure],childrens:[JNode],parent:JNode) {

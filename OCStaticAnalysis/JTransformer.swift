@@ -9,10 +9,12 @@ import Foundation
 
 public class JTransformer {
     public var ast:[JNode]
-    
+    /// TODO :  父节点需要使用栈管理
     public init(_ input: String) {
         ast = [JNode]()
-        var currentParent = JNode()
+        var parentStack = [JNode]()
+        parentStack.append(JNode())
+        var currentParent = parentStack.last!
         let numberLiteralClosure:VisitorClosure = { (node,parent) in
             if currentParent.type == .ExpressionStatement {
                 currentParent.expressions[0].params.append(node)
@@ -44,5 +46,11 @@ public class JTransformer {
                 currentParent = exp
             }
         }
+        
+            let vDic = ["NumberLiteral": numberLiteralClosure, "CallExpression" : callExpressionClosure]
+    
+            JTraverser(input).traverser(visitor: vDic)
+            print("After transform AST:")
+            JParser.astPrintable(ast)
     }
 }

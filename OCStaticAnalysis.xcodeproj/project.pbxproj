@@ -11,6 +11,7 @@
 		585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B225AE902D00D5F5A5 /* JToken.swift */; };
 		585AA0B625AE904400D5F5A5 /* JTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0B525AE904400D5F5A5 /* JTokenizer.swift */; };
 		585AA0BB25AE977500D5F5A5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */; };
+		58B9ECBB25B294B600F1390D /* CodeGeneratorFromJSToOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B9ECBA25B294B600F1390D /* CodeGeneratorFromJSToOC.swift */; };
 		58ED5AA425AFD391000A5F9F /* JNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA325AFD391000A5F9F /* JNode.swift */; };
 		58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AA725AFD506000A5F9F /* JParser.swift */; };
 		58ED5AAB25AFE769000A5F9F /* JTraverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED5AAA25AFE769000A5F9F /* JTraverser.swift */; };
@@ -35,6 +36,7 @@
 		585AA0B225AE902D00D5F5A5 /* JToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JToken.swift; sourceTree = "<group>"; };
 		585AA0B525AE904400D5F5A5 /* JTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTokenizer.swift; sourceTree = "<group>"; };
 		585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		58B9ECBA25B294B600F1390D /* CodeGeneratorFromJSToOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorFromJSToOC.swift; sourceTree = "<group>"; };
 		58ED5AA325AFD391000A5F9F /* JNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNode.swift; sourceTree = "<group>"; };
 		58ED5AA725AFD506000A5F9F /* JParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JParser.swift; sourceTree = "<group>"; };
 		58ED5AAA25AFE769000A5F9F /* JTraverser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTraverser.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				58ED5AA725AFD506000A5F9F /* JParser.swift */,
 				58ED5AAD25AFECDB000A5F9F /* JTransformer.swift */,
 				58ED5AAA25AFE769000A5F9F /* JTraverser.swift */,
+				58B9ECBA25B294B600F1390D /* CodeGeneratorFromJSToOC.swift */,
 			);
 			path = OCStaticAnalysis;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				585AA0BB25AE977500D5F5A5 /* StringExtensions.swift in Sources */,
 				58ED5AA825AFD506000A5F9F /* JParser.swift in Sources */,
+				58B9ECBB25B294B600F1390D /* CodeGeneratorFromJSToOC.swift in Sources */,
 				58ED5AAE25AFECDB000A5F9F /* JTransformer.swift in Sources */,
 				585AA0B325AE902D00D5F5A5 /* JToken.swift in Sources */,
 				58ED5AAB25AFE769000A5F9F /* JTraverser.swift in Sources */,

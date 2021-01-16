@@ -82,13 +82,13 @@ public class JParser {
     }
     
     // -------- 打印AST， 方便调试 ---------
-    func astPrintable(_ tree: [JNode]) {
+    static func astPrintable(_ tree: [JNode]) {
         for aNode in tree {
             recDesNode(aNode, level: 0)
         }
     }
     
-    private func recDesNode(_ node: JNode, level: Int) {
+    static private func recDesNode(_ node: JNode, level: Int) {
         let nodeTypeStr = node.type
         var preSpace = ""
         for _ in 0...level {
@@ -107,21 +107,29 @@ public class JParser {
             dataStr = "number type is \(node.numberType) number is \(numberStr)"
         case .CallExpression:
             dataStr = "expression is \(node.type) (\(node.name))"
+            print("\(preSpace) \(nodeTypeStr) \(dataStr)")
+            
+            if node.params.count > 0 {
+                for aNode in node.params {
+                    recDesNode(aNode, level: level+1)
+                }
+            }
         case .None:
             dataStr = ""
         case .Root:
-            dataStr = "program node"
+            dataStr = "Root node"
         case .Identifier:
             dataStr = "identifier node"
         case .ExpressionStatement:
             dataStr = "expression-statement node"
-        }
-        print("\(preSpace) \(nodeTypeStr) \(dataStr)")
-        
-        if node.params.count > 0 {
-            for aNode in node.params {
-                recDesNode(aNode, level: level+1)
+            print("\(preSpace) \(nodeTypeStr) \(dataStr)")
+
+            if node.expressions.count > 0 {
+                for aNode in node.expressions {
+                    recDesNode(aNode, level: level+1)
+                }
             }
         }
+        
     }
 }
