@@ -48,6 +48,7 @@
 		5880F10625B3E1C60085C46D /* OCLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCLexer.swift; sourceTree = "<group>"; };
 		5880F10725B3E1C60085C46D /* OCArithmetics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCArithmetics.swift; sourceTree = "<group>"; };
 		5880F10E25B3E2CD0085C46D /* OCInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCInterpreter.swift; sourceTree = "<group>"; };
+		5880F11125B3E82B0085C46D /* OurClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OurClass.m; sourceTree = "<group>"; };
 		58B9ECBA25B294B600F1390D /* CodeGeneratorFromJSToOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorFromJSToOC.swift; sourceTree = "<group>"; };
 		58ED5AA325AFD391000A5F9F /* JNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNode.swift; sourceTree = "<group>"; };
 		58ED5AA725AFD506000A5F9F /* JParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JParser.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 				5880F10225B3E1C60085C46D /* OCAnalysis */,
 				585AA09325AE808600D5F5A5 /* main.swift */,
 				585ED05525B3DE4300FE58DD /* LangTransformerDemo */,
+				5880F11125B3E82B0085C46D /* OurClass.m */,
 			);
 			path = OCStaticAnalysis;
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 				TargetAttributes = {
 					585AA08F25AE808600D5F5A5 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -316,10 +319,17 @@
 		585AA09825AE808700D5F5A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9BA762PTFR;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -327,9 +337,15 @@
 		585AA09925AE808700D5F5A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9BA762PTFR;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

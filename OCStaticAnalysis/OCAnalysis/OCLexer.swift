@@ -35,6 +35,9 @@ public class OCLexer {
         // 空格换行
         if CharacterSet.whitespacesAndNewlines.contains((currentCharacter?.unicodeScalars.first!)!) {
             skipWhiteSpaceAndNewLines()
+            if currentIndex > self.text.count - 1 {
+                return .eof
+            }
             //return .whiteSpaceAndNewLine
         }
         
