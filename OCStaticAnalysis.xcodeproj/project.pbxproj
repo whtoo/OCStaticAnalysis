@@ -74,6 +74,14 @@
 			isa = PBXGroup;
 			children = (
 				585AA09325AE808600D5F5A5 /* main.swift */,
+				585ED05525B3DE4300FE58DD /* LangTransformerDemo */,
+			);
+			path = OCStaticAnalysis;
+			sourceTree = "<group>";
+		};
+		585ED05525B3DE4300FE58DD /* LangTransformerDemo */ = {
+			isa = PBXGroup;
+			children = (
 				585AA0B225AE902D00D5F5A5 /* JToken.swift */,
 				585AA0B525AE904400D5F5A5 /* JTokenizer.swift */,
 				585AA0BA25AE977500D5F5A5 /* StringExtensions.swift */,
@@ -83,7 +91,7 @@
 				58ED5AAA25AFE769000A5F9F /* JTraverser.swift */,
 				58B9ECBA25B294B600F1390D /* CodeGeneratorFromJSToOC.swift */,
 			);
-			path = OCStaticAnalysis;
+			path = LangTransformerDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
