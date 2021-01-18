@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class OCSymbolTable {
+public class OCSymbolTable : CustomStringConvertible {
     var symbols: [String:OCSymbol] = [:]
     
     let name: String
@@ -18,6 +18,9 @@ public class OCSymbolTable {
         self.name = name
         self.level = level
         self.enclosingScope = enclosingScope
+        if enclosingScope == nil {
+            defineBuiltInTypes()
+        }
     }
     
     private func defineBuiltInTypes() {
@@ -41,5 +44,8 @@ public class OCSymbolTable {
         return enclosingScope?.lookup(name)
     }
     
+    public var description: String {
+        return "\(symbols)"
+    }
     
 }

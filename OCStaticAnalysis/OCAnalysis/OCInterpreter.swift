@@ -19,6 +19,10 @@ public class OCInterpreter {
         eval(node: ast)
         print("scope is \(scopes)")
         
+        let sa = OCStaticAnalyzer()
+        let symtb = sa.analyze(node: ast)
+        
+        print(symtb)
     }
     
     @discardableResult public func eval(node: OCAST) -> OCValue {

@@ -109,11 +109,6 @@ extension OCVisitor {
         
     }
     
-    func visit(variableDeclaration: OCVariableDeclaration) {
-        visit(node: variableDeclaration.variable)
-        visit(node: variableDeclaration.right)
-    }
-    
     /*------- 运算符 -------*/
     
     func visit(number _ : OCNumber) {

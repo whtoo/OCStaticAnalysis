@@ -1,12 +1,16 @@
 @interface OurClass
 
+@property (nonatomic,assign) CGFloat pa;
+@property (nonatomic,assign) CGFloat pb;
+
 @end
 
 @implementation OurClass
 
 - (void)run {
-    int a = 3;
-    int b = a * 2 + 1;
+    CGFloat ta = 4.3;
+    pb = 13.3;
+    pa = pb * 2 - ta + (2 + 3)
 }
 
 @end
