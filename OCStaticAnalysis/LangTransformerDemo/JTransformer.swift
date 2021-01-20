@@ -14,7 +14,7 @@ public class JTransformer {
         return parentStack.last!
     }
     
-    public func popParent() -> Bool {
+    @discardableResult public func popParent() -> Bool {
         return parentStack.popLast() != nil
     }
     

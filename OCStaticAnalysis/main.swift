@@ -7,12 +7,7 @@
 
 import Foundation
 
-//let input = "(lessThanOne (multiple (add 2 3.1) 4))"
-//
-////let parser = JParser(input)
-////let ast = parser.parser()
-////
-////JParser.astPrintable(ast)
+//let input = "(multiple (add 2 3.1) 4)"
 //
 //let generator = CodeGeneratorFromJSToOC(input)
 

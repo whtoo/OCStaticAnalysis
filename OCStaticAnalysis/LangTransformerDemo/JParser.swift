@@ -34,14 +34,54 @@ public class JParser {
         resetIndex()
         var nodeTree = [JNode]()
         while _current < _tokens.count {
-            nodeTree.append(walk())
+            nodeTree.append(program())
         }
         resetIndex()
         return nodeTree
     }
     // LL
-    private func walk() -> JNode {
+    // Program -> Number | CallExpr
+    // Number -> Int | Float
+    // CallExpr -> "(" Id Params ")"
+    // Int -> Digits
+    // Float -> Int "." Int
+    // Digit -> 0..9
+    // Digits -> Digit+
+    // Params -> Param*
+    // Param -> Number | CallExpr
+    
+    private func program() -> JNode {
         var tk = _currrnetTk
+        let jNode = JNode()
+        //检查是不是数字节点
+        if let numNode = number() {
+           return numNode
+        }
+        //检查是否CallExpression
+        if tk.type == "paren" && tk.value == "(" {
+            //跳过符号
+            advance()
+            tk = _currrnetTk
+            
+            jNode.type = .CallExpression
+            jNode.name = tk.value
+            advance()
+            while tk.type != "paren" || (tk.type == "paren" && tk.value != ")") {
+                //递归下降
+                jNode.params.append(program())
+                tk = _currrnetTk
+            }
+            // 跳到下一个
+            advance()
+            return jNode
+        }
+        
+        advance()
+        return jNode
+    }
+
+    func number() -> JNode? {
+        let tk = _currrnetTk
         let jNode = JNode()
         //检查是不是数字节点
         if tk.type == "int" || tk.type == "float" {
@@ -58,29 +98,8 @@ public class JParser {
             
             return jNode
         }
-        //检查是否CallExpression
-        if tk.type == "paren" && tk.value == "(" {
-            //跳过符号
-            advance()
-            tk = _currrnetTk
-            
-            jNode.type = .CallExpression
-            jNode.name = tk.value
-            advance()
-            while tk.type != "paren" || (tk.type == "paren" && tk.value != ")") {
-                //递归下降
-                jNode.params.append(walk())
-                tk = _currrnetTk
-            }
-            // 跳到下一个
-            advance()
-            return jNode
-        }
-        
-        advance()
-        return jNode
+        return nil
     }
-    
     // -------- 打印AST， 方便调试 ---------
     static func astPrintable(_ tree: [JNode]) {
         for aNode in tree {
